@@ -3,7 +3,6 @@ import json
 import os
 import discord
 from discord.ext import commands
-import random
 
 # Config
 with open('config.json', 'r') as cjson:
@@ -21,7 +20,7 @@ async def on_ready():
 Command prefix = \'{config['command_prefix']}\'''')
 
 async def main():
-    # Register cogs
+    # Dynamically register cogs
     for folder in os.listdir('cogs'):
         if os.path.exists(os.path.join('cogs', folder, 'cog.py')):
             await client.load_extension(f'cogs.{folder}.cog')

@@ -48,7 +48,6 @@ class IntroOutroCog(commands.Cog):
     async def outro(self, ctx: commands.Context):
         user = ctx.message.author
 
-        # if user.name == 'Eggkiller':
         if user.name in self.config['outro_users'] or len(self.config['outro_users']) == 0:
             channel = user.voice.channel
             vc = await channel.connect()
