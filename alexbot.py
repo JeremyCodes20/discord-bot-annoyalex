@@ -21,21 +21,6 @@ async def on_ready():
 Command prefix = \'{config['command_prefix']}\'''')
 
 async def main():
-
-    @client.event
-    async def on_message(message: discord.message.Message):
-        # Ignore messages sent by bot
-        if message.author == client.user:
-            return
-
-        # Annoy Alex
-        if message.author.name == config['annoy_user']:
-            x = random.randint(1, 10)
-            if x == 1:
-                await message.channel.send(file=discord.File(config['annoy_image']))
-
-        await client.process_commands(message)
-
     # Register cogs
     for folder in os.listdir('cogs'):
         if os.path.exists(os.path.join('cogs', folder, 'cog.py')):

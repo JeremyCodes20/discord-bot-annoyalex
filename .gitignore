@@ -1,5 +1,7 @@
 venv/
 *.mp3
 *.jpg
+img/
+audio/
 config.json
 __pycache__
