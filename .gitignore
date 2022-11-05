@@ -2,3 +2,4 @@ venv/
 *.mp3
 *.jpg
 config.json
+__pycache__
