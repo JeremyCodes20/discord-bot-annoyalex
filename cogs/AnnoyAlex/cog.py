@@ -1,6 +1,7 @@
 import random
 import discord
 from discord.ext import commands
+import logging
 
 class AnnoyAlexCog(commands.Cog):
     def __init__(self, client):
@@ -15,9 +16,12 @@ class AnnoyAlexCog(commands.Cog):
 
         # Annoy Alex
         if message.author.name == self.config['annoy_user']:
+            logging.debug(f'User {message.author.name} sent a message.')
             x = random.randint(1, 10)
             if x == 1:
-                await message.channel.send(file=discord.File(self.config['annoy_image']))
+                image_filename = self.config['annoy_image']
+                logging.debug(f'Sending image: {image_filename}')
+                await message.channel.send(file=discord.File(image_filename))
 
         # await self.client.process_commands(message)
 
