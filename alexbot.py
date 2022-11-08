@@ -36,10 +36,14 @@ Command prefix = \'{config['command_prefix']}\'''')
 
 async def main():
     # Dynamically register cogs
-    logging.debug('Registering cogs...')
+    logging.info('Registering cogs...')
     for folder in os.listdir('cogs'):
+        # Disable cogs in config
+        if folder in config['disabled_cogs']:
+            logging.info(f'{folder} cog is disabled.')
+            continue
         if os.path.exists(os.path.join('cogs', folder, 'cog.py')):
-            logging.debug(f'Found cog {folder}.')
+            logging.info(f'Found cog {folder}.')
             await client.load_extension(f'cogs.{folder}.cog')
 
     logging.debug('Starting Discord client.')
