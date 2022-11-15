@@ -26,6 +26,8 @@ with open(config_filename, 'r') as cjson:
 logging.debug('Setting up Discord client/bot.')
 intents = discord.Intents.default()
 intents.message_content = True
+intents.members = True
+intents.guilds = True
 client = commands.Bot(command_prefix=config['command_prefix'], intents=intents)
 client.config = config
 
