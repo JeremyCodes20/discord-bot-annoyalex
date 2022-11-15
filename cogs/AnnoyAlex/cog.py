@@ -21,7 +21,7 @@ class AnnoyAlexCog(commands.Cog):
             if x == 1:
                 image_filename = self.config['annoy_image']
                 logging.debug(f'Sending image: {image_filename}')
-                await message.channel.send(file=discord.File(image_filename))
+                await message.channel.send(file=discord.File(image_filename), delete_after=30)
 
         # await self.client.process_commands(message)
 
