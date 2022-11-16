@@ -41,6 +41,8 @@ class PhaedraCheckCog(commands.Cog):
             except Exception as e:
                 logging.error(e)
                 raise Exception("Phaedra is in the shop, but the message failed to send.", e)
+        else:
+            logging.info('Phaedra is not in the shop today :(')
 
 async def setup(client: commands.Bot):
     await client.add_cog(PhaedraCheckCog(client))
