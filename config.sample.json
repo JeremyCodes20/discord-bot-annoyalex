@@ -1,5 +1,6 @@
 {
     "client_token": "",
+    "OPENAI_API_KEY": "",
     "disabled_cogs": [],
     "intro_users": [],
     "intro_mp3": "",
