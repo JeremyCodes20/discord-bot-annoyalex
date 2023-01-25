@@ -22,6 +22,10 @@ class HardlyKnowHerCog(commands.Cog):
         longest_token = max(er_tokens, key=len)
         logging.info(f'Longest token: {longest_token}.')
 
+        if len(longest_token) < 5:
+            logging.info(f'Token not long enough (min 5).')
+            return
+
         image_filename = self.config['goteem_image']
         await message.channel.send(
             content=f"{longest_token}? I hardly know 'er",
