@@ -28,7 +28,7 @@ class OpenAiCog(commands.Cog):
             embed.set_image(url=image_url)
             embed.set_author(name=user.name)
 
-            await ctx.message.channel.send(embed=embed)
+            await ctx.message.channel.send(embed=embed, delete_after=3600)
         except Exception as e:
             logging.error(e)
     
