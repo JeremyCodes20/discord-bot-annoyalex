@@ -22,8 +22,8 @@ class HardlyKnowHerCog(commands.Cog):
         longest_token = max(er_tokens, key=len)
         logging.info(f'Longest token: {longest_token}.')
 
-        if len(longest_token) < 5:
-            logging.info(f'Token not long enough (min 5).')
+        if len(longest_token) < 8:
+            logging.info(f'Token not long enough (min 8).')
             return
 
         image_filename = self.config['goteem_image']
